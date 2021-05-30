@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rapha"
+		]
+	},
+	"kreuzmichauth-buttonmessage": "Login with Kreuzmich",
+	"kreuzmichauth-config-httpuser": "HTTP username for cURL protocol with Kreuzmich (optional, not username from login form!)",
+	"kreuzmichauth-config-httppwd": "HTTP password for cURL protocol with Kreuzmich (optional, not password from login form!)",
+	"kreuzmichauth-error-auth": "Wrong password/username combination. Either a typo or maybe your account has not yet been unlocked.",
+	"kreuzmichauth-error-blocked": "Your account has been blocked for this wiki.",
+	"kreuzmichauth-error-expired": "Your Kreuzmich account is expired. Former students are not allowed on this wiki.",
+	"kreuzmichauth-error-fsonly": "According to the FSMED Forum you are not a member of the student council. Therefore you are not allowed to log in on this wiki.",
+	"kreuzmichauth-error-noserver": "Kreuzmich server not available. Check if the Kreumzich subdomain/city is defined in LocalSettings.php.",
+	"kreuzmichauth-error-umlaut": "Your Kreuzmich username contains umlauts. Pleace replace them with the corresponding vowel, e.g. ä => a, not ae! Likewise ö => o, ü => u, ß => s.",
+	"kreuzmichauth-extensionname": "KreuzmichAuth",
+	"kreuzmichauth-extensiondesc": "This extension extends the PluggableAuth extension class to provide a login method through the Kreuzmich ExtAuth API",
+	"kreuzmichauth-msg": "By submitting the username and password to Kreuzmich, I expressly consent to the transfer of personal account data from Kreuzmich to this Wiki.",
+	"kreuzmichauth-user": "Kreuzmich username",
+	"kreuzmichauth-pwd": "Kreuzmich password"
+}

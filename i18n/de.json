@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rapha"
+		]
+	},
+	"kreuzmichauth-buttonmessage": "Login mit Kreuzmich",
+	"kreuzmichauth-config-httpuser": "Der HTTP Benutzername für das cURL Protokoll mit Kreuzmich (optional, nicht der Benutzername aus dem Loginfeld!)",
+	"kreuzmichauth-config-httppwd": "Das HTTP Passwort für das cURL Protokoll mit Kreuzmich (optional, nicht das Passwort aus dem Loginfeld!)",
+	"kreuzmichauth-error-auth": "Dieser Kreuzmich Benutzer und dieses Passwort ist uns nicht bekannt. Entweder ein Tippfehler oder dein Konto ist noch nicht bei Kreuzmich freigeschaltet.",
+	"kreuzmichauth-error-blocked": "Dein Konto wurde für die Benutzung des Wikis gesperrt.",
+	"kreuzmichauth-error-expired": "Dein Kreuzmich Konto ist abgelaufen! Leider sind ehemalige Studierende auf diesem Wiki nicht zugelassen.",
+	"kreuzmichauth-error-fsonly": "Du bist leider laut FSMED Forum kein Fachschaftler! In diesem Wiki sind nur Fachschaftler zugelassen.",
+	"kreuzmichauth-error-noserver": "Es konnte kein Kreuzmich-Server erreicht werden. Ist die Kreuzmich Stadt in LocalSettings definiert?",
+	"kreuzmichauth-error-umlaut": "Dein Kreuzmich-Benutzername enthält einen Umlaut. Bitte ersetze den Umlaut durch den entsprechenden Vokal, also z.B. ä => a, nicht ae! Ebenso ö => o, ü => u, ß => s.",
+	"kreuzmichauth-extensionname": "KreuzmichAuth",
+	"kreuzmichauth-extensiondesc": "Diese Erweiterung ergänzt die Erweiterung Pluggable Auth um die Funktion, den Kreuzmich Login über die Kreuzmich ExtAuth API zu nutzen. Benutzer, die sich das erste Mal einloggen, werden als neue Benutzer angelegt.",
+	"kreuzmichauth-msg": "Mit der Eingabe von Kreuzmich Nutzernamen und Passwort willige ich in die Datenübertragung meiner Benutzerdaten von Kreuzmich zum Wiki ein. Bitte setze immer den Haken „Angemeldet bleiben“.",
+	"kreuzmichauth-user": "Kreuzmich Benutzername",
+	"kreuzmichauth-pwd": "Kreuzmich Passwort"
+}

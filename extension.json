@@ -1,0 +1,76 @@
+{
+	"name": "KreuzmichAuth",
+	"namemsg": "kreuzmichauth-extensionname",
+	"version": "1.1",
+	"author": "Raphael Menke",
+	"url": "https://www.kreuzmich.de",
+	"requires": {
+		"MediaWiki": ">= 1.31.1",
+		"extensions": {
+			"PluggableAuth": ">= 5.4"
+		}
+	},
+	"descriptionmsg": "kreuzmichauth-extensiondesc",
+	"license-name": "GPL-2.0+",
+	"type": "other",
+	"MessagesDirs": {
+		"KreuzmichAuth": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"KreuzmichAuth": "KreuzmichAuth.class.php"
+	},
+	"config": {
+		"PluggableAuth_Class": {
+			"value": "KreuzmichAuth",
+			"path": false,
+			"description": "The class provided by KreuzmichAuth to be loaded by PluggableAuth",
+			"descriptionmsg": "kreuzmichauth-config-pluggableauthclass",
+			"public": true
+		},
+		"PluggableAuth_ButtonLabelMessage": {
+			"value": "kreuzmichauth-buttonmessage",
+			"path": false,
+			"description": "The string provided by KreuzmichAuth to be loaded by PluggableAuth as the Login Button Text ",
+			"descriptionmsg": "kreuzmichauth-config-pluggableauthbutton",
+			"public": true
+		},
+		"KreuzmichAuth_EnableExpired": {
+			"value": false,
+			"path": false,
+			"description": "Configure whether KreuzmichAuth should allow user accounts that are expired on Kreuzmich.",
+			"descriptionmsg": "kreuzmichauth-config-expired",
+			"public": true
+		},
+		"KreuzmichAuth_OnlyFachschaft": {
+			"value": true,
+			"path": false,
+			"description": "Configure whether KreuzmichAuth should only allow users who are member of the Fachschaft group in FSMED forums.",
+			"descriptionmsg": "kreuzmichauth-config-fsonly",
+			"public": true
+		},
+		"KreuzmichAuth_City": {
+			"value": null,
+			"path": false,
+			"description": "Configure which Kreuzmich city/subdomain should be used by KreuzmichAuth.",
+			"descriptionmsg": "kreuzmichauth-config-city",
+			"public": true
+		},
+		"KreuzmichAuth_HttpUser": {
+			"value": "",
+			"path": false,
+			"description": "Configure which HTTP username should be used for cURL by KreuzmichAuth.",
+			"descriptionmsg": "kreuzmichauth-config-httpuser",
+			"public": true
+		},
+		"KreuzmichAuth_HttpPwd": {
+			"value": "",
+			"path": false,
+			"description": "Configure which HTTP password should be used for cURL by KreuzmichAuth.",
+			"descriptionmsg": "kreuzmichauth-config-httppwd",
+			"public": true
+		}
+	},
+	"manifest_version": 2
+}
