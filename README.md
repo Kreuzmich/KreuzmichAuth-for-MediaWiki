@@ -8,20 +8,20 @@ Download files and rename folder to "KreuzmichAuth", copy it into your /extensio
 https://www.mediawiki.org/wiki/Extension:PluggableAuth needs to be installed. See this page for configuration for PluggableAuth. 
 Important configuration settings for PluggableAuth are listed below.
 
-# Configuration PluggableAuth - necessary
+# Configuration 
+### Configuration PluggableAuth - necessary
 ```
 $wgGroupPermissions['*']['createaccount'] = true;
 $wgGroupPermissions['*']['autocreateaccount'] = true;
 ```
 
-# Configuration PluggableAuth - recommended
+### Configuration PluggableAuth - recommended
 ```$wgGroupPermissions['*']['edit'] = false;
 $wgGroupPermissions['*']['read'] = false;
 $wgGroupPermissions['user']['read'] = true;
 ```
 
-# Configuration KreuzmichAuth
-the following lines need to be added to your LocalSettings.php
+### Configuration KreuzmichAuth - necessary
 ```
 wfLoadExtension( 'KreuzmichAuth' );
 
@@ -43,13 +43,19 @@ $wgPluggableAuth_ExtraLoginFields = [
 
 # add your Kreuzmich subdomain here, e.g. 'duesseldorf', 'koeln', 'regensburg'
 $wgKreuzmichAuth_City = 'duesseldorf';
-
-# you can specify HTTP Username and HTTP Password, if needed. If not, leave this commented out
-# $wgKreuzmichAuth_HttpUser = '';
-# $wgKreuzmichAuth_HttpPwd = '';
-# $wgKreuzmichAuth_EnableExpired = true;
-# $wgKreuzmichAuth_OnlyFachschaft = true;
 ```
 
 ## Further configuration
-If wanted, an aditional PHP function can be specified to further specify if users are allowed to log in, e.g. for a wiki intended only for a group of users.
+If needed you can specify HTTP User and HTTP Password here (not needed in normal mode)
+```
+$wgKreuzmichAuth_HttpUser = '';
+$wgKreuzmichAuth_HttpPwd = '';
+```
+You can also specify if expired Kreuzmich Users are allowed
+```
+$wgKreuzmichAuth_EnableExpired = true;
+```
+If you set this setting, only special users are allowed. The PHP function getFachschaftStatus() can be further specified for this reason. 
+```
+$wgKreuzmichAuth_OnlyFachschaft = true;
+```
