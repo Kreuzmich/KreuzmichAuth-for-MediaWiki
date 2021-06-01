@@ -5,12 +5,24 @@ Establishes a authentication via cURL against Kreuzmich Server for MediaWiki. Re
 Download files and rename folder to "KreuzmichAuth", copy it into your /extensions folder.
 
 # Prerequisites
-https://www.mediawiki.org/wiki/Extension:PluggableAuth needs to be installed. 
+https://www.mediawiki.org/wiki/Extension:PluggableAuth needs to be installed. See this page for configuration for PluggableAuth. 
+Important configuration settings for PluggableAuth are listed below.
 
-# Configuration
+# Configuration PluggableAuth - necessary
+```
+$wgGroupPermissions['*']['createaccount'] = true;
+$wgGroupPermissions['*']['autocreateaccount'] = true;
+```
+
+# Configuration PluggableAuth - recommended
+```$wgGroupPermissions['*']['edit'] = false;
+$wgGroupPermissions['*']['read'] = false;
+$wgGroupPermissions['user']['read'] = true;
+```
+
+# Configuration KreuzmichAuth
 the following lines need to be added to your LocalSettings.php
 ```
-wfLoadExtension( 'PluggableAuth' );
 wfLoadExtension( 'KreuzmichAuth' );
 
 # KreuzmichAuth für PluggableAuth 
@@ -29,7 +41,7 @@ $wgPluggableAuth_ExtraLoginFields = [
 		'sensitive' => true,
 	]];
 
-# add your Kreuzmich subdomain here
+# add your Kreuzmich subdomain here, e.g. 'duesseldorf', 'koeln', 'regensburg'
 $wgKreuzmichAuth_City = 'duesseldorf';
 
 # you can specify HTTP Username and HTTP Password, if needed. If not, leave this commented out
