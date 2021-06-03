@@ -107,26 +107,27 @@ class KreuzmichAuth extends PluggableAuth {
 			if ( isset( $GLOBALS['wgKreuzmichAuth_EnableExpired'] )  &&
 				( $GLOBALS['wgKreuzmichAuth_EnableExpired'] == false ) && // Ist Config Variable gesetzt?
 				( $user_data['expired'] == true )	) // Ist dieser Benutzer abgelaufen? 
-				{
+			{
 				$errorMessage = wfMessage( 'kreuzmichauth-error-expired' )->parse();
 				return false;
-				}
+			}
 			
-			if ( is_null($this->getUserStatus( $this->logindata['kmuser'] )) )   // Ist dieser Benutzer für das Wiki blockiert? 
-				{
+			// Ist dieser einzelne Benutzer speziell für das Wiki blockiert? 
+			// das kann ohne  $GLOBALS['wgKreuzmichAuth_OnlyFachschaft'] == true für einzelne Benutzer definiert werden
+			if ( is_null($this->getUserStatus( $this->logindata['kmuser'] )) )   
+			{
 				$errorMessage = wfMessage( 'kreuzmichauth-error-blocked' )->parse();
 				return false;
-				}
-			
+			}
 			
 			// Falls dieser Benutzer kein Fachschaftler ist & wir keine Fachschaftler erlauben, Fehler
 			if ( isset( $GLOBALS['wgKreuzmichAuth_OnlyFachschaft'] ) && 
 				( $GLOBALS['wgKreuzmichAuth_OnlyFachschaft'] == true ) &&  // Ist Config Variable gesetzt?
 				( $this->getUserStatus( $this->logindata['kmuser'] ) === false )   )   // Ist dieser Benutzer kein Fachschaftler? 
-				{
+			{
 				$errorMessage = wfMessage( 'kreuzmichauth-error-fsonly' )->parse();
 				return false;
-				}
+			}
 				
 			// Wenn du es bis hierhin schaffst, darf der Benutzer sich einloggen
 			
@@ -134,7 +135,7 @@ class KreuzmichAuth extends PluggableAuth {
 			// return id oder null
 			$id = $this->getUserByName ( $this->logindata['kmuser'] );
 			
-			//falls null wird PluggableAuth neuen User erstellen, sonst wird diese ID geladen
+			// falls null wird PluggableAuth neuen User erstellen, sonst wird diese ID geladen
 			
 			// lade Benutzerinfo, die ggf. Info des Benutzers mit $id überschreibt
 			$username = $user_data['username']; // Username wird neuerdings von Kreuzmich mitgeschickt
@@ -160,8 +161,12 @@ class KreuzmichAuth extends PluggableAuth {
 	
 	/*
 	* Diese Funktion kann verwendet werden, um zusätzlich zu den Kreuzmich-Daten nur bestimmte Studis ins Wiki zuzulassen
+	*  
+	* Wenn $wgKreuzmichAuth_OnlyFachschaft in LocalSettings.php auf true gesetzt ist:
 	*
 	* return boolean (darf sich einloggen oder nicht)
+	*
+	* Auch OHNE $wgKreuzmichAuth_OnlyFachschaft können einzelne Benutzer können mit return NULL blockiert werden, wird separat abgefangen.
 	*/
 	private function getUserStatus ( $username ) 
 	{
