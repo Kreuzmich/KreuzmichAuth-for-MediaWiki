@@ -55,7 +55,7 @@ You can also specify if expired Kreuzmich Users are allowed
 ```
 $wgKreuzmichAuth_EnableExpired = true;
 ```
-If you set this setting, only special users are allowed. The PHP function getFachschaftStatus() can be further specified for this reason. 
+If you set this setting, only special users are allowed. The PHP function getUserStatus() can be further specified for this reason. 
 ```
 $wgKreuzmichAuth_OnlyFachschaft = true;
 ```
