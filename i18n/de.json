@@ -10,7 +10,7 @@
 	"kreuzmichauth-error-auth": "Dieser Kreuzmich Benutzer und dieses Passwort ist uns nicht bekannt. Entweder ein Tippfehler oder dein Konto ist noch nicht bei Kreuzmich freigeschaltet.",
 	"kreuzmichauth-error-blocked": "Dein Konto wurde für die Benutzung des Wikis gesperrt.",
 	"kreuzmichauth-error-expired": "Dein Kreuzmich Konto ist abgelaufen! Leider sind ehemalige Studierende auf diesem Wiki nicht zugelassen.",
-	"kreuzmichauth-error-fsonly": "Du bist leider laut FSMED Forum kein Fachschaftler! In diesem Wiki sind nur Fachschaftler zugelassen.",
+	"kreuzmichauth-error-membersonly": "Du bist leider laut FSMED Forum nicht berechtigt, das Wiki zu lesen! In diesem Wiki sind nur Mitglieder folgender Gruppe zugelassen: ",
 	"kreuzmichauth-error-noserver": "Es konnte kein Kreuzmich-Server erreicht werden. Ist die Kreuzmich Stadt in LocalSettings definiert?",
 	"kreuzmichauth-error-umlaut": "Dein Kreuzmich-Benutzername enthält einen Umlaut. Bitte ersetze den Umlaut durch den entsprechenden Vokal, also z.B. ä => a, nicht ae! Ebenso ö => o, ü => u, ß => s.",
 	"kreuzmichauth-extensionname": "KreuzmichAuth",

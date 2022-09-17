@@ -10,7 +10,7 @@
 	"kreuzmichauth-error-auth": "Wrong password/username combination. Either a typo or maybe your account has not yet been unlocked.",
 	"kreuzmichauth-error-blocked": "Your account has been blocked for this wiki.",
 	"kreuzmichauth-error-expired": "Your Kreuzmich account is expired. Former students are not allowed on this wiki.",
-	"kreuzmichauth-error-fsonly": "According to the FSMED Forum you are not a member of the student council. Therefore you are not allowed to log in on this wiki.",
+	"kreuzmichauth-error-membersonly": "According to the FSMED Forum you are not authorized to read this wiki. Only members of the following group are allowed to log in: ",
 	"kreuzmichauth-error-noserver": "Kreuzmich server not available. Check if the Kreumzich subdomain/city is defined in LocalSettings.php.",
 	"kreuzmichauth-error-umlaut": "Your Kreuzmich username contains umlauts. Pleace replace them with the corresponding vowel, e.g. ä => a, not ae! Likewise ö => o, ü => u, ß => s.",
 	"kreuzmichauth-extensionname": "KreuzmichAuth",

@@ -9,7 +9,7 @@
 	"kreuzmichauth-config-httppwd": "Das HTTP Passwort für das cURL Protokoll mit Kreuzmich (optional, nicht das Passwort aus dem Loginfeld!)",
 	"kreuzmichauth-error-auth": "Fehlermeldung bei falschem Kreuzmich Passwort oder noch nicht freigeschaltetem Konto.",
 	"kreuzmichauth-error-expired": "Fehlermeldung bei abgelaufenem Kreuzmich Konto, falls abgelaufene Konten nicht erlaubt sind.",
-	"kreuzmichauth-error-fsonly": "Fehlermeldung bei Kreuzmich Konto, das laut Forum ein Fachschaftler ist, falls nur Fachschaftler erlaubt sind.",
+	"kreuzmichauth-error-membersonly": "Fehlermeldung bei Kreuzmich Konto, das laut Forum nicht zur Gruppe gehört, die für den Login in LocalSettings definiert ist.",
 	"kreuzmichauth-error-noserver": "Fehlermeldung wenn Kreuzmich-Server nicht erreicht werden kann, z.B. wenn Server down ist bzw. nicht in LocalSettings definiert.",
 	"kreuzmichauth-error-umlaut": "Fehlermeldung bei Umlauten (ä, ö, ü, ß) im Benutzernamen im Loginfeld.",
 	"kreuzmichauth-extensionname": "Der Name der Erweiterung in der extension.json.",

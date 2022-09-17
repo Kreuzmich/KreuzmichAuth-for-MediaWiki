@@ -1,13 +1,13 @@
 {
 	"name": "KreuzmichAuth",
 	"namemsg": "kreuzmichauth-extensionname",
-	"version": "1.1",
+	"version": "1.2",
 	"author": "Raphael Menke",
 	"url": "https://www.kreuzmich.de",
 	"requires": {
-		"MediaWiki": ">= 1.31.1",
+		"MediaWiki": ">= 1.35.0",
 		"extensions": {
-			"PluggableAuth": ">= 5.4"
+			"PluggableAuth": ">= 6.0"
 		}
 	},
 	"descriptionmsg": "kreuzmichauth-extensiondesc",
@@ -18,36 +18,50 @@
 			"i18n"
 		]
 	},
-	"AutoloadClasses": {
-		"KreuzmichAuth": "KreuzmichAuth.class.php"
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\KreuzmichAuth\\": "includes/"
+	},
+	"callback": "MediaWiki\\Extension\\KreuzmichAuth\\KreuzmichAuthHooks::onRegister",
+	"attributes": {
+		"PluggableAuth": {
+			"KreuzmichAuth": {
+				"class" : "MediaWiki\\Extension\\KreuzmichAuth\\KreuzmichAuth"
+			}
+		}
+	},
+	"MessagesDirs": {
+		"KreuzmichAuth": [
+			"i18n"
+		]
+	},
+	"Hooks": {
+		"PluggableAuthPopulateGroups": "main"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Extension\\KreuzmichAuth\\HookHandler",
+		}
 	},
 	"config": {
-		"PluggableAuth_Class": {
-			"value": "KreuzmichAuth",
+		"KreuzmichAuth_AccessGroup": {
+			"value": null,
 			"path": false,
-			"description": "The class provided by KreuzmichAuth to be loaded by PluggableAuth",
-			"descriptionmsg": "kreuzmichauth-config-pluggableauthclass",
+			"description": "Name of your external source's group whose members are allowed in this wiki. Set null to allow any user authenticated by Kreuzmich.",
+			"descriptionmsg": "kreuzmichauth-config-accessgroup",
 			"public": true
 		},
-		"PluggableAuth_ButtonLabelMessage": {
-			"value": "kreuzmichauth-buttonmessage",
+		"KreuzmichAuth_BlockedGroup": {
+			"value": null,
 			"path": false,
-			"description": "The string provided by KreuzmichAuth to be loaded by PluggableAuth as the Login Button Text ",
-			"descriptionmsg": "kreuzmichauth-config-pluggableauthbutton",
+			"description": "Name of your external source's group whose members are not allowed in this wiki, even though being in the Access Group. Set null to unable this feature.",
+			"descriptionmsg": "kreuzmichauth-config-accessgroup",
 			"public": true
 		},
-		"KreuzmichAuth_EnableExpired": {
-			"value": false,
+		"KreuzmichAuth_AdminGroup": {
+			"value": null,
 			"path": false,
-			"description": "Configure whether KreuzmichAuth should allow user accounts that are expired on Kreuzmich.",
-			"descriptionmsg": "kreuzmichauth-config-expired",
-			"public": true
-		},
-		"KreuzmichAuth_OnlyFachschaft": {
-			"value": true,
-			"path": false,
-			"description": "Configure whether KreuzmichAuth should only allow users who are member of the Fachschaft group in FSMED forums.",
-			"descriptionmsg": "kreuzmichauth-config-fsonly",
+			"description": "Name of your external source's admin group whose members are always allowed to login, also to read internal articles in this wiki. Set null to allow any user authenticated by Kreuzmich.",
+			"descriptionmsg": "kreuzmichauth-config-admingroup",
 			"public": true
 		},
 		"KreuzmichAuth_City": {
@@ -69,6 +83,13 @@
 			"path": false,
 			"description": "Configure which HTTP password should be used for cURL by KreuzmichAuth.",
 			"descriptionmsg": "kreuzmichauth-config-httppwd",
+			"public": true
+		},
+		"KreuzmichAuth_EnableExpired": {
+			"value": false,
+			"path": false,
+			"description": "Configure whether KreuzmichAuth should allow user accounts that are expired on Kreuzmich.",
+			"descriptionmsg": "kreuzmichauth-config-expired",
 			"public": true
 		}
 	},
