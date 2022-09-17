@@ -201,23 +201,7 @@ class KreuzmichAuth extends PluggableAuth {
 	*/
 	private function getExternalGroups ( $username )
 	{
-		// Verbinde mit Forum/Benutzerverwaltung
-		$ch_forum = curl_init("https://board.fsmed.de/benutzer.php");
-		// Session Optionen
-		curl_setopt($ch_forum, CURLOPT_SSL_VERIFYPEER, false);
-		curl_setopt($ch_forum, CURLOPT_POSTFIELDS, http_build_query(array('forum_gruppen_von' => $this->logindata['kmuser'], 'ajax' => 'true', 'request' => 'true'))); 
-		curl_setopt($ch_forum, CURLOPT_RETURNTRANSFER, true);
-		// cURL ausfuehren
-		$result_forum=curl_exec($ch_forum);
-		// Liest eine huebsche JSON in einen Array
-		$forum_auth = json_decode($result_forum, true);
-		// Session Ende
-		curl_close($ch_forum);
-		
-		if ($forum_auth['success']) foreach ($forum_auth['detail'] as $group_obj) {
-			$ext_groups[] = $group_obj['name'];
-		}
-		
+		// hier dein eigener Code, der ein eindimensionales Array $ext_groups erstellen sollte
 		
 		$this->groups = (is_array($ext_groups)) ? $ext_groups : [];
 	}
